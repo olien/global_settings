@@ -1,0 +1,30 @@
+global_settings_addon_help = 
+
+global_settings_start = Start
+global_settings_settings = Einstellungen
+global_settings_setup = Setup
+global_settings_help = Hilfe
+
+global_settings_start_title = Global Settings für REDAXO
+global_settings_start_example_link_internal = Interner Beispiellink
+global_settings_start_example_link_external = Externer Beispiellink
+
+global_settings_help_chapter_readme = Readme
+global_settings_help_chapter_changelog = Changelog
+global_settings_help_chapter_license = Lizenz
+
+global_settings_setup_step1 = Schritt 1: Mach dies
+global_settings_setup_step1_desc1 = Beschreibungstext 1
+global_settings_setup_step2 = Schritt 2: Mach das
+global_settings_setup_step2_desc1 = Beschreibungstext 2
+global_settings_setup_step3 = Schritt 3: Mach jenes
+global_settings_setup_step3_desc1 = Beschreibungstext 3
+
+global_settings_config_ok = Einstellungen wurden aktualisiert.
+global_settings_config_error = Einstellungen konnte nicht gespeichert werden!
+global_settings_install_make_dir = Der Ordner "/redaxo/include/{0}/" kann nicht angelegt werden, überprüfen Sie die Schreibrechte oder legen Sie den Ordner von Hand an und geben ihm Schreibrechte.
+global_settings_install_perm_dir = Der Ordner "/redaxo/include/{0}/" benötigt Schreibrechte!
+
+global_settings_settings_foo = Foo
+global_settings_settings_foo2 = Foo2
+global_settings_settings_save = Einstellungen speichern
