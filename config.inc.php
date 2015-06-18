@@ -17,6 +17,8 @@ if ($REX['REDAXO']) {
 
 // includes
 require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/class.rex_global_settings_utils.inc.php');
+require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/class.rex_global_settings_language.php');
+require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/class.rex_global_settings_form.php');
 
 // default settings (user settings are saved in data dir!)
 $REX['ADDON']['global_settings']['settings'] = array(
@@ -36,9 +38,27 @@ if ($REX['REDAXO']) {
 		array('help', $I18N->msg('global_settings_help'))
 	);
 
+    if(OOAddon::isAvailable('metainfo')) {
+
+        require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/metainfo/global_settings_metainfo.php');
+
+        // add global_settings to metaTables and metaPrefix
+        rex_register_extension('PAGE_CHECKED', 'global_settings_metainfo::setProperty');
+
+        // load page into navigation
+        $REX['ADDON']['global_settings']['SUBPAGES'][] = array(
+            'metainfo',
+            $I18N->msg('global_settings_metainfo')
+        );
+    }
+
 	// add css/js files to page header
 	if (rex_request('page') == 'global_settings') {
 		rex_register_extension('PAGE_HEADER', 'rex_global_settings_utils::appendToPageHeader');
 	}
+
+    // handles if new clangs added or removed
+    rex_register_extension('CLANG_ADDED', 'rex_global_settings_language::onClangAdd');
+    rex_register_extension('CLANG_DELETED', 'rex_global_settings_language::onClangDelete');
 }
 ?>

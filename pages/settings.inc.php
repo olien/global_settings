@@ -4,6 +4,13 @@ $page = rex_request('page', 'string');
 $subpage = rex_request('subpage', 'string');
 $func = rex_request('func', 'string');
 
+$clang = rex_request('clang', 'int', $REX['START_CLANG_ID']);
+
+$urlParams = '&amp;subpage=' . $subpage;
+if($func) {
+    $urlParams .= '&amp;func=' . $func;
+}
+
 // save settings
 if ($func == 'update') {
 	$settings = (array) rex_post('settings', 'array', array());
@@ -11,13 +18,37 @@ if ($func == 'update') {
 	rex_global_settings_utils::replaceSettings($settings);
 	rex_global_settings_utils::updateSettingsFile();
 }
+
+//output languages
+rex_global_settings_language::buildLanguageNavigation($clang, $urlParams);
 ?>
 
 <div class="rex-addon-output">
+
+    <?php
+
+    $form = new rex_global_settings_form(
+        $REX['TABLE_PREFIX'] . 'global_settings',
+        $I18N->msg('global_settings_settings'),
+        'clang = ' . $clang
+    );
+    $form->divId = 'global_settings-addon-editmode';
+
+    if(OOAddon::isAvailable('metainfo')) {
+        $form->addRawField($form->getMetainfoExtension());
+    }
+
+    if($func == 'add') {
+        $form->addParam('clang', (int)$clang);
+    }
+
+    $form->show();
+
+    ?>
+
 	<div class="rex-form">
 
 		<h2 class="rex-hl2"><?php echo $I18N->msg('global_settings_settings'); ?></h2>
-
 		<form action="index.php" method="post">
 
 			<fieldset class="rex-form-col-1">
