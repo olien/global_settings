@@ -38,9 +38,7 @@ rex_global_settings_language::buildLanguageNavigation($clang, $urlParams);
         $form->addRawField($form->getMetainfoExtension());
     }
 
-    if($func == 'add') {
-        $form->addParam('clang', (int)$clang);
-    }
+    $form->addHiddenField('clang', (int)$clang);
 
     $form->show();
 
