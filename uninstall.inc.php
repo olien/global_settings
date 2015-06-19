@@ -1,9 +1,5 @@
 <?php
 
-$REX['ADDON']['install']['global_settings'] = false;
-
-require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/metainfo/global_settings_metainfo.php');
-
 global_settings_metainfo::setProperty();
 // delete the metafields
 if($error = global_settings_metainfo::delFields()) {
@@ -14,3 +10,5 @@ if($error = global_settings_metainfo::delFields()) {
     $sql = new rex_sql();
     $sql->setQuery('DROP TABLE `' . $REX['TABLE_PREFIX'] . 'global_settings`');
 }
+
+$REX['ADDON']['install']['global_settings'] = false;
