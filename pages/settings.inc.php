@@ -39,6 +39,7 @@ rex_global_settings_language::buildLanguageNavigation($clang, $urlParams);
     }
 
     $form->addHiddenField('clang', (int)$clang);
+    $form->addParam('clang', (int) $clang);
 
     $form->show();
 

@@ -29,6 +29,9 @@ $REX['ADDON']['global_settings']['settings'] = array(
 // overwrite default settings with user settings
 rex_global_settings_utils::includeSettingsFile();
 
+// check the clang in our database table
+rex_global_settings_language::checkLangsInDatabase();
+
 if ($REX['REDAXO']) {
 	// add subpages
 	$REX['ADDON']['global_settings']['SUBPAGES'] = array(

@@ -2,6 +2,45 @@
 
 class rex_global_settings_language
 {
+    /**
+     * check if all languages are in the databse
+     * @return bool
+     */
+    public static function checkLangsInDatabase()
+    {
+        global $REX;
+
+        try {
+
+            foreach ($REX['CLANG'] as $id => $name) {
+                $sql = new rex_sql();
+                $sql->setQuery('SELECT `clang` FROM ' . $REX['TABLE_PREFIX'] . 'global_settings WHERE `clang` = ' . $id);
+
+                switch ($sql->getRows()) {
+                    case 0:
+                        $sql = new rex_sql();
+                        $sql->setTable($REX['TABLE_PREFIX'] . 'global_settings');
+                        $sql->setValue('clang', $id);
+                        $sql->insert();
+                        break;
+                    case 1:
+                        // clang is in the database
+                        break;
+                    default:
+                        throw new Exception('global_settings: clang #' . $id . ' is ' . $sql->getRows() . 'x in the database, only once allowed.');
+
+                }
+            }
+
+            return true;
+
+        } catch(Exception $e) {
+            echo rex_warning($e->getMessage());
+
+            return false;
+        }
+    }
+
     public static function buildLanguageNavigation($curClang, $urlParams)
     {
         global $REX;
