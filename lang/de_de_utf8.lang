@@ -6,7 +6,7 @@ global_settings_setup = Setup
 global_settings_help = Hilfe
 global_settings_metainfo = Felder
 
-global_settings_start_title = Global Settings für REDAXO
+global_settings_start_title = Globale Einstellungen für REDAXO
 global_settings_start_example_link_internal = Interner Beispiellink
 global_settings_start_example_link_external = Externer Beispiellink
 

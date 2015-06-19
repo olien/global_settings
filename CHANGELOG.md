@@ -1,5 +1,5 @@
-Global Settings - Changelog
-===========================
+Globale Einstellungen - Changelog
+=================================
 
 ### Version 1.0.0
 

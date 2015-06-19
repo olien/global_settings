@@ -1,5 +1,5 @@
-Global Settings - MIT Lizenz
-============================
+Globale Einstellungen - MIT Lizenz
+==================================
 
 Copyright (c) 2015 RexDude & Sysix-Coding
 

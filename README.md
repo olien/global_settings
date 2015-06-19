@@ -1,5 +1,5 @@
-Global Settings AddOn für REDAXO 4
-==================================
+Globale Einstellungen AddOn für REDAXO 4
+========================================
 
 Hier steht der AddOn Beschreibungstext.
 

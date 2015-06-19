@@ -1,6 +1,6 @@
 <?php
 // init addon
-$REX['ADDON']['name']['global_settings'] = 'Global Settings';
+$REX['ADDON']['name']['global_settings'] = 'Globale Einstellungen';
 $REX['ADDON']['page']['global_settings'] = 'global_settings';
 $REX['ADDON']['version']['global_settings'] = '1.0.0';
 $REX['ADDON']['author']['global_settings'] = 'RexDude, Sysix-Coding';
