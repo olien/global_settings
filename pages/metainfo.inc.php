@@ -1,5 +1,6 @@
 <?php
 
+$func = rex_request('func', 'string');
 $prefix = global_settings_metainfo::PREFIX;
 $metaTable = $REX['TABLE_PREFIX'] . global_settings_metainfo::TABLE;
 
