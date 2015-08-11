@@ -5,7 +5,7 @@ $subpage = rex_request('subpage', 'string');
 
 // if no subpage specified, use this one
 if ($subpage == '') {
-	$subpage = 'start';
+	$subpage = 'settings';
 }
 
 // layout top
@@ -16,9 +16,7 @@ rex_title($REX['ADDON']['name']['global_settings'] . ' <span style="font-size:14
 
 // include subpage
 include($REX['INCLUDE_PATH'] . '/addons/global_settings/pages/' . $subpage . '.inc.php');
-?>
 
-<?php 
 // layout bottom
 require($REX['INCLUDE_PATH'] . '/layout/bottom.php');
 ?>

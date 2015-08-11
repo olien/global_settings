@@ -1,22 +1,7 @@
 Globale Einstellungen AddOn für REDAXO 4
 ========================================
 
-Hier steht der AddOn Beschreibungstext.
-
-Features
---------
-
-* Todo
-
-Codebeispiele
--------------
-
-```php
-<?php
-// output something
-echo foo();
-?>
-```
+Mit diesem Addon kann man globale MetaInfos setzen die für die gesamte Website gültig sind.
 
 Hinweise
 --------
@@ -33,6 +18,12 @@ Lizenz
 ------
 
 siehe [LICENSE.md](LICENSE.md)
+
+Collaborators
+-------------
+
+* [Sysix](https://github.com/Sysix)
+* [polarpixel](https://github.com/polarpixel)
 
 Credits
 -------
