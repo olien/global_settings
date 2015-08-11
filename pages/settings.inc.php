@@ -3,11 +3,17 @@
 $page = rex_request('page', 'string');
 $subpage = rex_request('subpage', 'string');
 $func = rex_request('func', 'string');
+$msg = rex_request('_msg', 'string');
 $clang = rex_request('clang', 'int', $REX['START_CLANG_ID']);
 $urlParams = '&amp;subpage=' . $subpage;
 
 if ($func) {
     $urlParams .= '&amp;func=' . $func;
+}
+
+// msg
+if ($msg != '') {
+	echo rex_info($msg);
 }
 
 //output languages
