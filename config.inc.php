@@ -33,7 +33,7 @@ rex_global_settings_language::checkLangsInDatabase();
 if ($REX['REDAXO']) {
 	// add subpages
 	$REX['ADDON']['global_settings']['SUBPAGES'] = array(
-		array('settings', $I18N->msg('global_settings_settings'))
+		array('', $I18N->msg('global_settings_settings'))
 	);
 
     if (OOAddon::isAvailable('metainfo')) {
@@ -43,16 +43,20 @@ if ($REX['REDAXO']) {
         rex_register_extension('PAGE_CHECKED', 'global_settings_metainfo::setProperty');
 
         // load page into navigation
-        $REX['ADDON']['global_settings']['SUBPAGES'][] = array(
-            'metainfo',
-            $I18N->msg('global_settings_metainfo')
-        );
+		if (isset($REX['USER']) && $REX['USER']->isAdmin()) {
+		    $REX['ADDON']['global_settings']['SUBPAGES'][] = array(
+		        'metainfo',
+		        $I18N->msg('global_settings_metainfo')
+		    );
+		}
     }
 
 	// add subpages
-	$REX['ADDON']['global_settings']['SUBPAGES'][] = array(
-		'help', $I18N->msg('global_settings_help')
-	);
+	if (isset($REX['USER']) && $REX['USER']->isAdmin()) {
+		$REX['ADDON']['global_settings']['SUBPAGES'][] = array(
+			'help', $I18N->msg('global_settings_help')
+		);
+	}
 
 	// add css/js files to page header
 	if (rex_request('page') == 'global_settings') {

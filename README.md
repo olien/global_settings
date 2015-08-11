@@ -1,7 +1,13 @@
 Globale Einstellungen AddOn für REDAXO 4
 ========================================
 
-Mit diesem Addon kann man globale MetaInfos setzen die für die gesamte Website gültig sind.
+Mit diesem Addon kann man globale MetaInfos setzen die für die gesamte Website gültig sind. Admins können Felder anlegen und bearbeiten, Nicht-Admins können nur bearbeiten
+
+Features
+--------
+
+* MetaInfos für die gesamte Website
+* Nicht-Admins können Felder nur bearbeiten
 
 Hinweise
 --------
