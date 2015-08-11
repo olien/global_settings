@@ -29,6 +29,7 @@ Hinweise
 --------
 
 * Getestet mit REDAXO 4.6
+* MetaInfo AddOn muss installiert sein
 * AddOn-Ordner lautet: `global_settings`
 
 Changelog
