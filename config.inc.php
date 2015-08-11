@@ -16,6 +16,7 @@ if ($REX['REDAXO']) {
 }
 
 // includes
+require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/class.rex_global_settings.inc.php');
 require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/class.rex_global_settings_utils.inc.php');
 require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/class.rex_global_settings_language.php');
 require($REX['INCLUDE_PATH'] . '/addons/global_settings/classes/class.rex_global_settings_form.php');
@@ -29,6 +30,11 @@ rex_global_settings_utils::includeSettingsFile();
 
 // check the clang in our database table
 rex_global_settings_language::checkLangsInDatabase();
+
+// init global settings 
+if (!$REX['SETUP']) {
+	rex_register_extension('ADDONS_INCLUDED', 'rex_global_settings::init');
+}
 
 if ($REX['REDAXO']) {
 	// add subpages

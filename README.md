@@ -7,7 +7,23 @@ Features
 --------
 
 * MetaInfos für die gesamte Website
-* Nicht-Admins können Felder nur bearbeiten
+* API für den Zugriff auf die Felder
+* Nicht-Admins dürfen Felder nur bearbeiten
+* Mehrsprachigkeit
+
+API
+---
+
+```php
+// ausgabe eines Feldes der aktuellen Sprache
+echo rex_global_settings::getValue('glob_feldname');
+
+// ausgabe eines Feldes der Sprache mit der ID = 2
+echo rex_global_settings::getValue('glob_feldname', 2);
+
+// ausgabe eines Feldes der Haupt-Sprache
+echo rex_global_settings::getDefaultValue('glob_feldname');
+```
 
 Hinweise
 --------
