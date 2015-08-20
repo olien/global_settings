@@ -2,7 +2,7 @@
 // init addon
 $REX['ADDON']['name']['global_settings'] = 'Globale Einstellungen';
 $REX['ADDON']['page']['global_settings'] = 'global_settings';
-$REX['ADDON']['version']['global_settings'] = '1.0.0';
+$REX['ADDON']['version']['global_settings'] = '1.0.1';
 $REX['ADDON']['author']['global_settings'] = 'RexDude, Sysix-Coding, Polarpixel';
 $REX['ADDON']['supportpage']['global_settings'] = 'forum.redaxo.org';
 $REX['ADDON']['perm']['global_settings'] = 'global_settings[]';

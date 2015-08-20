@@ -1,0 +1,9 @@
+global_settings_addon_help = Global Settings AddOn for REDAXO
+
+global_settings_settings = Settings
+global_settings_metainfo = Fields
+global_settings_help = Help
+
+global_settings_help_chapter_readme = Readme
+global_settings_help_chapter_changelog = Changelog
+global_settings_help_chapter_license = License
