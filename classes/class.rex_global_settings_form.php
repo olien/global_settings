@@ -173,28 +173,30 @@ class rex_global_settings_form extends rex_form
             }
             // dont save restricted fields
             $attrArray = rex_split_string($fieldAttributes);
+
             if (isset($attrArray['perm'])) {
                 if (!$REX['USER']->hasPerm($attrArray['perm'])) {
                     continue;
                 }
                 unset($attrArray['perm']);
             }
+
             // handle date types with timestamps
-            if (isset($postValue['year']) && isset($postValue['month']) && isset($postValue['day']) && isset($postValue['hour']) && isset($postValue['minute'])) {
+            if (is_array($postValue) && isset($postValue['year']) && isset($postValue['month']) && isset($postValue['day']) && isset($postValue['hour']) && isset($postValue['minute'])) {
                 if (isset($postValue['active'])) {
                     $saveValue = mktime((int)$postValue['hour'], (int)$postValue['minute'], 0, (int)$postValue['month'], (int)$postValue['day'], (int)$postValue['year']);
                 } else {
                     $saveValue = 0;
                 }
             } // handle date types without timestamps
-            elseif (isset($postValue['year']) && isset($postValue['month']) && isset($postValue['day'])) {
+            elseif (is_array($postValue) && isset($postValue['year']) && isset($postValue['month']) && isset($postValue['day'])) {
                 if (isset($postValue['active'])) {
                     $saveValue = mktime(0, 0, 0, (int)$postValue['month'], (int)$postValue['day'], (int)$postValue['year']);
                 } else {
                     $saveValue = 0;
                 }
             } // handle time types
-            elseif (isset($postValue['hour']) && isset($postValue['minute'])) {
+            elseif (is_array($postValue) && isset($postValue['hour']) && isset($postValue['minute'])) {
                 if (isset($postValue['active'])) {
                     $saveValue = mktime((int)$postValue['hour'], (int)$postValue['minute'], 0, 0, 0, 0);
                 } else {
